@@ -33,10 +33,12 @@ export const Messages = forwardRef<HTMLDivElement, MessagesProps>(
     const { id, isStreaming = false, messages = [], hasError = false } = props;
     const location = useLocation();
     const [showLoadingGame, setShowLoadingGame] = useState(false);
+    const isStreamingEnabled = import.meta.env.VITE_ENABLE_STREAMING === 'true';
 
     useEffect(() => {
       let timer: NodeJS.Timeout;
-      if (isStreaming) {
+      // Only show loading game in non-streaming mode
+      if (isStreaming && !isStreamingEnabled) {
         timer = setTimeout(() => {
           setShowLoadingGame(true);
         }, 2000);
@@ -44,7 +46,7 @@ export const Messages = forwardRef<HTMLDivElement, MessagesProps>(
         setShowLoadingGame(false);
       }
       return () => clearTimeout(timer);
-    }, [isStreaming]);
+    }, [isStreaming, isStreamingEnabled]);
 
     const handleRewind = (messageId: string) => {
       const searchParams = new URLSearchParams(location.search);

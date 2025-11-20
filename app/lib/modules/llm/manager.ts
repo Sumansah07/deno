@@ -198,6 +198,13 @@ export class LLMManager {
   }
 
   getDefaultProvider(): BaseProvider {
+    const primaryProvider = this._env.PRIMARY_PROVIDER || 'OpenRouter';
+    const provider = this._providers.get(primaryProvider);
+    
+    if (provider) {
+      return provider;
+    }
+    
     const firstProvider = this._providers.values().next().value;
 
     if (!firstProvider) {

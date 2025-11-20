@@ -96,10 +96,10 @@ async function chatAction({ context, request }: ActionFunctionArgs) {
       requestedProvider?: string;
     }>();
 
-  // Use default model if none specified
+  // Always use PRIMARY_MODEL from env
   const defaultFallback = getDefaultModel();
-  let currentModel = requestedModel || defaultFallback.model;
-  let currentProvider = requestedProvider || defaultFallback.provider;
+  let currentModel = defaultFallback.model;
+  let currentProvider = defaultFallback.provider;
   let retryCount = 0;
 
   const cookieHeader = request.headers.get('Cookie');
@@ -111,14 +111,18 @@ async function chatAction({ context, request }: ActionFunctionArgs) {
   // Two-stage AI pipeline: Kimi plans, then builder AI implements
   let enhancedMessages = messages;
   const lastUserMessage = messages.filter(m => m.role === 'user').slice(-1)[0];
-  const kimiEnabled = useKimiPlanning !== false; // Default: enabled
+  // Kimi planning logic:
+  // useKimiPlanning=true → Use kimi-k2-thinking (thinking mode ON)
+  // useKimiPlanning=false OR undefined → Skip Kimi entirely (planning OFF)
+  const kimiEnabled = useKimiPlanning === true; // Only enabled when explicitly true
+  const kimiModel = 'moonshotai/kimi-k2-thinking'; // Always use thinking mode when enabled
   
-  logger.info(`🎯 Kimi Check: chatMode=${chatMode}, hasLastMessage=${!!lastUserMessage}, useKimiPlanning=${useKimiPlanning}, kimiEnabled=${kimiEnabled}`);
+  logger.info(`🎯 Kimi Check: chatMode=${chatMode}, hasLastMessage=${!!lastUserMessage}, useKimiPlanning=${useKimiPlanning}, kimiEnabled=${kimiEnabled}, model=${kimiModel}`);
   
   if (chatMode === 'build' && lastUserMessage && kimiEnabled) {
     logger.info('✅ All conditions met, starting Kimi planning...');
     try {
-      logger.info('🧠 Stage 1: Kimi planning phase started');
+      logger.info(`🧠 Stage 1: Kimi planning phase started with ${kimiModel}`);
       
       // Extract clean content without [Model:] and [Provider:] tags
       const { extractPropertiesFromMessage } = await import('~/lib/.server/llm/utils');
@@ -134,7 +138,12 @@ async function chatAction({ context, request }: ActionFunctionArgs) {
         env: process.env,
         options: { 
           toolChoice: 'none',
-          maxTokens: 50000
+          maxTokens: 50000,
+          providerOptions: useKimiPlanning === true ? {
+            openrouter: {
+              reasoning: { enabled: true }
+            }
+          } : undefined
         },
         apiKeys,
         files: {},
@@ -142,7 +151,7 @@ async function chatAction({ context, request }: ActionFunctionArgs) {
         promptId,
         contextOptimization: false,
         chatMode: 'discuss',
-        forceModel: 'moonshotai/kimi-k2-thinking',
+        forceModel: kimiModel,
         forceProvider: 'OpenRouter',
       });
 
@@ -163,17 +172,12 @@ async function chatAction({ context, request }: ActionFunctionArgs) {
       logger.info(`✅ Kimi planning complete: ${designPlan.length} chars`);
       logger.info(`📋 Kimi response preview: ${designPlan.substring(0, 500)}...`);
       
-      // Format exactly like manual paste: [Model: xxx]\n\n[Provider: xxx]\n\n<content>
-      const formattedPrompt = `[Model: ${currentModel}]\n\n[Provider: ${currentProvider}]\n\n${designPlan}`;
-      
-      logger.info(`📤 Formatted prompt preview (first 500 chars): ${formattedPrompt.substring(0, 50000)}`);
-      
       enhancedMessages = [
         ...messages.slice(0, -1),
         {
           id: generateId(),
           role: 'user',
-          content: formattedPrompt
+          content: `[Model: ${currentModel}]\n\n[Provider: ${currentProvider}]\n\n${cleanContent}\n\n<design_suggestions>\n${designPlan}\n</design_suggestions>`
         }
       ];
       

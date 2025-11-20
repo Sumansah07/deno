@@ -98,7 +98,13 @@ async function chatAction({ context, request }: ActionFunctionArgs) {
     },
   });
 
-  const { messages, files, promptId, contextOptimization, supabase, chatMode, designScheme, maxLLMSteps } =
+  const cookieHeader = request.headers.get('Cookie');
+  const apiKeys = JSON.parse(parseCookies(cookieHeader || '').apiKeys || '{}');
+  const providerSettings: Record<string, IProviderSetting> = JSON.parse(
+    parseCookies(cookieHeader || '').providers || '{}',
+  );
+
+  const { messages, files, promptId, contextOptimization, supabase, chatMode, designScheme, maxLLMSteps, useKimiPlanning, requestedModel, requestedProvider } =
     await request.json<{
       messages: Messages;
       files: any;
@@ -115,7 +121,19 @@ async function chatAction({ context, request }: ActionFunctionArgs) {
         };
       };
       maxLLMSteps: number;
+      useKimiPlanning?: boolean;
+      requestedModel?: string;
+      requestedProvider?: string;
     }>();
+
+  // Use PRIMARY_MODEL from env as primary choice in streaming mode
+  const { getDefaultModel } = await import('~/lib/.server/llm/model-fallback');
+  const defaultFallback = getDefaultModel();
+  const selectedModel = defaultFallback.model;
+  const selectedProvider = defaultFallback.provider;
+  
+  logger.info(`🎯 Model selection: PRIMARY_MODEL=${defaultFallback.model}, requested=${requestedModel}, using=${selectedModel}`);
+  logger.info(`🎯 Provider selection: PRIMARY_PROVIDER=${defaultFallback.provider}, requested=${requestedProvider}, using=${selectedProvider}`);
 
   // Add screen limit context only for users with low remaining screens
   const remainingScreens = userScreenLimit - userScreensUsed;
@@ -128,9 +146,18 @@ async function chatAction({ context, request }: ActionFunctionArgs) {
   let enhancedMessages = messages;
   const lastUserMessage = messages.filter(m => m.role === 'user').slice(-1)[0];
   
-  if (chatMode === 'build' && lastUserMessage) {
+  // Kimi planning logic:
+  // useKimiPlanning=true → Use kimi-k2-thinking (thinking mode ON)
+  // useKimiPlanning=false OR undefined → Skip Kimi entirely (planning OFF)
+  const kimiEnabled = useKimiPlanning === true; // Only enabled when explicitly true
+  const kimiModel = 'moonshotai/kimi-k2-thinking'; // Always use thinking mode when enabled
+  
+  logger.info(`🎯 Kimi Check: chatMode=${chatMode}, hasLastMessage=${!!lastUserMessage}, useKimiPlanning=${useKimiPlanning}, kimiEnabled=${kimiEnabled}, model=${kimiModel}`);
+  
+  if (chatMode === 'build' && lastUserMessage && kimiEnabled) {
+    logger.info('✅ All conditions met, starting Kimi planning...');
     try {
-      logger.info('🧠 Stage 1: Kimi creative suggestions phase started');
+      logger.info(`🧠 Stage 1: Kimi creative suggestions phase started with ${kimiModel}`);
       
       const planningPrompt = `You are a creative design consultant providing inspiration and suggestions for mobile app design.
 
@@ -149,16 +176,25 @@ Provide creative design suggestions including:
 
 Keep it concise and inspirational - these are suggestions to enhance creativity, not rigid requirements.`;
 
-      const planningResult = await streamText({
+      // Use generateText instead of streamText for Kimi planning (more reliable)
+      const { generateText } = await import('~/lib/.server/llm/generate-text');
+      
+      // Extract clean content without [Model:] and [Provider:] tags
+      const { content: cleanContent } = extractPropertiesFromMessage(lastUserMessage);
+      
+      logger.info(`📝 Clean user request: ${cleanContent}`);
+      
+      const planningResult = await generateText({
         messages: [{ id: generateId(), role: 'user', content: planningPrompt }],
         env: process.env,
         options: { 
           toolChoice: 'none',
-          providerOptions: {
+          maxTokens: 50000,
+          providerOptions: useKimiPlanning === true ? {
             openrouter: {
               reasoning: { enabled: true }
             }
-          }
+          } : undefined
         },
         apiKeys,
         files: {},
@@ -166,39 +202,40 @@ Keep it concise and inspirational - these are suggestions to enhance creativity,
         promptId,
         contextOptimization: false,
         chatMode: 'discuss',
-        forceModel: 'moonshotai/kimi-k2-thinking',
+        forceModel: kimiModel,
         forceProvider: 'OpenRouter',
       });
 
-      let designPlan = '';
-      for await (const chunk of planningResult.textStream) {
-        designPlan += chunk;
-      }
-
-      logger.info(`✅ Kimi suggestions complete: ${designPlan.length} chars`);
+      logger.info(`🔍 Kimi result keys: ${Object.keys(planningResult).join(', ')}`);
+      logger.info(`🔍 Result.text: "${planningResult.text}"`);
+      logger.info(`🔍 Result.reasoning: "${planningResult.reasoning?.substring(0, 200)}..."`);
+      logger.info(`🔍 Result.finishReason: ${planningResult.finishReason}`);
+      logger.info(`🔍 Result.usage: ${JSON.stringify(planningResult.usage)}`);
       
+      // Kimi returns response in reasoning field for thinking mode, text field for normal mode
+      const designPlan = planningResult.reasoning || planningResult.text;
+      
+      if (!designPlan || designPlan.length === 0) {
+        logger.error('❌ Kimi returned empty response, skipping planning');
+        throw new Error('Empty Kimi response');
+      }
+      
+      logger.info(`✅ Kimi planning complete: ${designPlan.length} chars`);
+      logger.info(`📋 Kimi response preview: ${designPlan.substring(0, 500)}...`);
+      
+      // Keep original request + add Kimi suggestions as context
       enhancedMessages = [
         ...messages.slice(0, -1),
         {
           id: generateId(),
           role: 'user',
-          content: `${lastUserMessage.content}\n\n---\n\nDesign Inspiration & Suggestions:\n${designPlan}\n\n---${limitContext}\n\nUse the above suggestions as creative inspiration to build a complete, professional mobile app. Apply your expertise to decide the best approach, screens, and design choices.`
+          content: `${cleanContent}\n\n<design_suggestions>\n${designPlan}\n</design_suggestions>`
         }
       ];
       
       logger.info('🚀 Stage 2: Builder AI implementation phase starting');
     } catch (error) {
       logger.error('❌ Kimi suggestions failed, proceeding without enhancement:', error);
-      // Fallback: just add limit context to original message if needed
-      if (shouldLimitScreens) {
-        enhancedMessages = [
-          ...messages.slice(0, -1),
-          {
-            ...lastUserMessage,
-            content: lastUserMessage.content + limitContext
-          }
-        ];
-      }
     }
   }
   
@@ -214,12 +251,6 @@ Keep it concise and inspirational - these are suggestions to enhance creativity,
     ];
     logger.info(`⚠️ Added screen limit context (no Kimi): ${remainingScreens} screens remaining`);
   }
-
-  const cookieHeader = request.headers.get('Cookie');
-  const apiKeys = JSON.parse(parseCookies(cookieHeader || '').apiKeys || '{}');
-  const providerSettings: Record<string, IProviderSetting> = JSON.parse(
-    parseCookies(cookieHeader || '').providers || '{}',
-  );
 
   const stream = new SwitchableStream();
 
@@ -448,6 +479,8 @@ Keep it concise and inspirational - these are suggestions to enhance creativity,
               designScheme,
               summary,
               messageSliceId,
+              forceModel: selectedModel,
+              forceProvider: selectedProvider,
             });
 
             result.mergeIntoDataStream(dataStream);
@@ -489,6 +522,8 @@ Keep it concise and inspirational - these are suggestions to enhance creativity,
           designScheme,
           summary,
           messageSliceId,
+          forceModel: selectedModel,
+          forceProvider: selectedProvider,
         });
 
         (async () => {

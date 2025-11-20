@@ -84,15 +84,13 @@ export async function streamText(props: {
     forceModel,
     forceProvider,
   } = props;
-  let currentModel = forceModel || DEFAULT_MODEL;
-  let currentProvider = forceProvider || DEFAULT_PROVIDER.name;
+  let currentModel = DEFAULT_MODEL;
+  let currentProvider = DEFAULT_PROVIDER.name;
   let processedMessages = messages.map((message) => {
     const newMessage = { ...message };
 
     if (message.role === 'user') {
-      const { model, provider, content } = extractPropertiesFromMessage(message);
-      if (!forceModel) currentModel = model;
-      if (!forceProvider) currentProvider = provider;
+      const { content } = extractPropertiesFromMessage(message);
       newMessage.content = sanitizeText(content);
     } else if (message.role == 'assistant') {
       newMessage.content = sanitizeText(message.content);

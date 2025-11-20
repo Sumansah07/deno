@@ -173,6 +173,11 @@ export const ChatImpl = memo(
           },
         },
         maxLLMSteps: mcpSettings.maxLLMSteps,
+        requestedModel: model,
+        requestedProvider: provider.name,
+        get useKimiPlanning() {
+          return typeof window !== 'undefined' ? localStorage.getItem('kimiPlanning') !== 'false' : true;
+        },
       },
       sendExtraMessageFields: true,
       onError: (e) => {
