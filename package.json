@@ -77,6 +77,8 @@
     "@lezer/highlight": "^1.2.1",
     "@modelcontextprotocol/sdk": "^1.15.0",
     "@nanostores/react": "^0.7.3",
+    "@netlify/remix-adapter": "^2.7.0",
+    "@netlify/remix-edge-adapter": "^3.5.0",
     "@octokit/rest": "^21.0.2",
     "@octokit/types": "^13.6.2",
     "@openrouter/ai-sdk-provider": "^0.0.5",
