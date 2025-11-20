@@ -1,8 +1,9 @@
 {
   "tasks": {
+    "install": "npm install --omit=optional",
     "build": "npm run build",
     "start": "npm run start"
   },
-  "nodeModulesDir": true,
+  "nodeModulesDir": "auto",
   "lock": false
 }
