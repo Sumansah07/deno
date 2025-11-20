@@ -24,7 +24,10 @@ export default defineConfig((config) => {
         'node:crypto', 'node:url', 'node:stream', 'node:util', 'node:zlib', 'node:path', 'node:module', 'node:fs', 'node:os', 'node:http', 'node:https', 'node:buffer', 'node:events', 'node:assert', 'node:child_process'
       ],
       noExternal: ['@supabase/supabase-js'],
-
+      resolve: {
+        conditions: ['node', 'import'],
+        externalConditions: ['node', 'import'],
+      },
     },
     resolve: {
       extensions: ['.mjs', '.js', '.mts', '.ts', '.jsx', '.tsx', '.json'],

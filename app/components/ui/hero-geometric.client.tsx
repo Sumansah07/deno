@@ -1,5 +1,6 @@
-// Server-safe stub - actual component in .client.tsx
-export { HeroGeometric } from './hero-geometric.client';
+import { motion } from 'framer-motion';
+import { Circle } from 'lucide-react';
+import { classNames } from '~/utils/classNames';
 
 function ElegantShape({
   className,

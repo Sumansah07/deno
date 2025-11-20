@@ -1,5 +1,10 @@
-// Server-safe stub - actual component in .client.tsx
-export { Timeline } from './timeline.client';
+import {
+  useMotionValueEvent,
+  useScroll,
+  useTransform,
+  motion,
+} from "framer-motion";
+import React, { useEffect, useRef, useState } from "react";
 
 interface TimelineEntry {
   title: string;

@@ -1,5 +1,4 @@
-// Server-safe stub - actual component in .client.tsx
-export { FloatingPathsBackground } from './floating-paths-background.client';
+import { motion } from 'framer-motion';
 
 interface FloatingPathsBackgroundProps {
   className?: string;
