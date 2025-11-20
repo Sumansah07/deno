@@ -1,9 +1,12 @@
 import { createRequestHandler } from "@remix-run/node";
-import * as build from "../../build/server/index.js";
 
-const handler = createRequestHandler({
-  build,
-  mode: process.env.NODE_ENV,
-});
+const handler = async (event, context) => {
+  const build = await import("../../build/server/nodejs-eyJydW50aW1lIjoibm9kZWpzIn0/index.js");
+  const requestHandler = createRequestHandler({
+    build,
+    mode: process.env.NODE_ENV,
+  });
+  return requestHandler(event, context);
+};
 
 export { handler };

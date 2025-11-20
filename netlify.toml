@@ -8,7 +8,7 @@
 [functions]
   directory = "netlify/functions"
   node_bundler = "esbuild"
-  included_files = ["build/server/**"]
+  included_files = ["build/server/nodejs-eyJydW50aW1lIjoibm9kZWpzIn0/**"]
 
 [[redirects]]
   from = "/*"
