@@ -15,6 +15,7 @@
     "postinstall": "echo 'Build cache cleared'",
     "dev": "node pre-start.cjs && remix vite:dev",
     "start": "cross-env NODE_ENV=production remix-serve ./build/server/index.js",
+    "deno:deploy": "deno run --allow-all npm:@remix-run/serve ./build/server/index.js",
     "test": "vitest --run",
     "test:watch": "vitest",
     "lint": "eslint --cache --cache-location ./node_modules/.cache/eslint app",

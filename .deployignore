@@ -1,0 +1,12 @@
+node_modules/
+.git/
+.husky/
+.qodo/
+.vercel/
+docs/
+electron/
+n8n-workflows/
+*.log
+.env.local
+.env
+.DS_Store
