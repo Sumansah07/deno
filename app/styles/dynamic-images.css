@@ -1,0 +1,33 @@
+/* Dynamic Image Sizing - No Fixed Dimensions */
+.dynamic-img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100vh;
+  object-fit: contain;
+  object-position: center;
+  transition: all 0.3s ease;
+}
+
+/* Content-aware responsive images */
+.responsive-img {
+  width: clamp(200px, 50vw, 1200px);
+  height: auto;
+  aspect-ratio: attr(data-aspect-ratio);
+}
+
+/* Viewport-based sizing */
+.viewport-img {
+  width: 100%;
+  height: auto;
+  max-width: min(90vw, 800px);
+}
+
+/* Mobile-first responsive */
+@media (max-width: 768px) {
+  .dynamic-img { width: 100%; height: auto; }
+}
+
+@media (min-width: 769px) {
+  .dynamic-img { width: auto; height: auto; }
+}

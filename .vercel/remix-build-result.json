@@ -1,0 +1,1254 @@
+{
+  "buildManifest": {
+    "serverBundles": {
+      "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0": {
+        "id": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+        "file": "build/server/nodejs-eyJydW50aW1lIjoibm9kZWpzIn0/index.js",
+        "config": {
+          "runtime": "nodejs"
+        }
+      }
+    },
+    "routeIdToServerBundleId": {
+      "routes/api.billing.sync-subscription": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.billing.create-checkout": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.configured-providers": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.canvas.snapshot.$id": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.supabase.variables": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.system.diagnostics": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.mcp-update-config": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.projects.$id.load": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.canvas.snapshots": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.chat.usage-stats": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.cleanup-projects": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.models.$provider": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.system.disk-info": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.canvas.snapshot": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.export-api-keys": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.export-to-figma": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.generate-mockup": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.github-branches": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.github-template": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.gitlab-branches": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.gitlab-projects": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.projects.create": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.storage.cleanup": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.system.git-info": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.webhooks.stripe": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.auth.sync-user": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.billing.manage": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.billing.portal": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.screens.create": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.storage.delete": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.supabase.query": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.test-increment": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.webhooks.clerk": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.billing.usage": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.chat.messages": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.check-env-key": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.screens.count": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.supabase-user": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.chat.history": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.chat.session": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.github-stats": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.storage.list": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.test-billing": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.canvas.load": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.canvas.save": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.chat.search": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.git-proxy.$": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.github-user": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.track-usage": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/debug.user-sync": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.bug-report": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/debug.supabase": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/setup.database": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/admin.migrate": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.auth.csrf": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.mcp-check": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.enhancer": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.git-info": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.supabase": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.llmcall": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.health": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.models": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.update": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.usage": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/dashboard": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/sign-in.$": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/sign-up.$": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/test-auth": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.chat": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/chat.$id": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/settings": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/sign-in": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/sign-up": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/_index": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/git": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0"
+    },
+    "routes": {
+      "root": {
+        "path": "",
+        "id": "root",
+        "file": "app/root.tsx",
+        "config": {}
+      },
+      "routes/api.billing.sync-subscription": {
+        "file": "app/routes/api.billing.sync-subscription.ts",
+        "id": "routes/api.billing.sync-subscription",
+        "path": "api/billing/sync-subscription",
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api.billing.create-checkout": {
+        "file": "app/routes/api.billing.create-checkout.ts",
+        "id": "routes/api.billing.create-checkout",
+        "path": "api/billing/create-checkout",
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api.configured-providers": {
+        "file": "app/routes/api.configured-providers.ts",
+        "id": "routes/api.configured-providers",
+        "path": "api/configured-providers",
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api.canvas.snapshot.$id": {
+        "file": "app/routes/api.canvas.snapshot.$id.ts",
+        "id": "routes/api.canvas.snapshot.$id",
+        "path": ":id",
+        "parentId": "routes/api.canvas.snapshot",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api.supabase.variables": {
+        "file": "app/routes/api.supabase.variables.ts",
+        "id": "routes/api.supabase.variables",
+        "path": "variables",
+        "parentId": "routes/api.supabase",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api.system.diagnostics": {
+        "file": "app/routes/api.system.diagnostics.ts",
+        "id": "routes/api.system.diagnostics",
+        "path": "api/system/diagnostics",
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api.mcp-update-config": {
+        "file": "app/routes/api.mcp-update-config.ts",
+        "id": "routes/api.mcp-update-config",
+        "path": "api/mcp-update-config",
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api.projects.$id.load": {
+        "file": "app/routes/api.projects.$id.load.ts",
+        "id": "routes/api.projects.$id.load",
+        "path": "api/projects/:id/load",
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api.canvas.snapshots": {
+        "file": "app/routes/api.canvas.snapshots.ts",
+        "id": "routes/api.canvas.snapshots",
+        "path": "api/canvas/snapshots",
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api.chat.usage-stats": {
+        "file": "app/routes/api.chat.usage-stats.ts",
+        "id": "routes/api.chat.usage-stats",
+        "path": "usage-stats",
+        "parentId": "routes/api.chat",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api.cleanup-projects": {
+        "file": "app/routes/api.cleanup-projects.ts",
+        "id": "routes/api.cleanup-projects",
+        "path": "api/cleanup-projects",
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api.models.$provider": {
+        "file": "app/routes/api.models.$provider.ts",
+        "id": "routes/api.models.$provider",
+        "path": ":provider",
+        "parentId": "routes/api.models",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api.system.disk-info": {
+        "file": "app/routes/api.system.disk-info.ts",
+        "id": "routes/api.system.disk-info",
+        "path": "api/system/disk-info",
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api.canvas.snapshot": {
+        "file": "app/routes/api.canvas.snapshot.ts",
+        "id": "routes/api.canvas.snapshot",
+        "path": "api/canvas/snapshot",
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api.export-api-keys": {
+        "file": "app/routes/api.export-api-keys.ts",
+        "id": "routes/api.export-api-keys",
+        "path": "api/export-api-keys",
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api.export-to-figma": {
+        "file": "app/routes/api.export-to-figma.ts",
+        "id": "routes/api.export-to-figma",
+        "path": "api/export-to-figma",
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api.generate-mockup": {
+        "file": "app/routes/api.generate-mockup.ts",
+        "id": "routes/api.generate-mockup",
+        "path": "api/generate-mockup",
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api.github-branches": {
+        "file": "app/routes/api.github-branches.ts",
+        "id": "routes/api.github-branches",
+        "path": "api/github-branches",
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api.github-template": {
+        "file": "app/routes/api.github-template.ts",
+        "id": "routes/api.github-template",
+        "path": "api/github-template",
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api.gitlab-branches": {
+        "file": "app/routes/api.gitlab-branches.ts",
+        "id": "routes/api.gitlab-branches",
+        "path": "api/gitlab-branches",
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api.gitlab-projects": {
+        "file": "app/routes/api.gitlab-projects.ts",
+        "id": "routes/api.gitlab-projects",
+        "path": "api/gitlab-projects",
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api.projects.create": {
+        "file": "app/routes/api.projects.create.ts",
+        "id": "routes/api.projects.create",
+        "path": "api/projects/create",
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api.storage.cleanup": {
+        "file": "app/routes/api.storage.cleanup.ts",
+        "id": "routes/api.storage.cleanup",
+        "path": "api/storage/cleanup",
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api.system.git-info": {
+        "file": "app/routes/api.system.git-info.ts",
+        "id": "routes/api.system.git-info",
+        "path": "api/system/git-info",
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api.webhooks.stripe": {
+        "file": "app/routes/api.webhooks.stripe.ts",
+        "id": "routes/api.webhooks.stripe",
+        "path": "api/webhooks/stripe",
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api.auth.sync-user": {
+        "file": "app/routes/api.auth.sync-user.ts",
+        "id": "routes/api.auth.sync-user",
+        "path": "api/auth/sync-user",
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api.billing.manage": {
+        "file": "app/routes/api.billing.manage.ts",
+        "id": "routes/api.billing.manage",
+        "path": "api/billing/manage",
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api.billing.portal": {
+        "file": "app/routes/api.billing.portal.ts",
+        "id": "routes/api.billing.portal",
+        "path": "api/billing/portal",
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api.screens.create": {
+        "file": "app/routes/api.screens.create.ts",
+        "id": "routes/api.screens.create",
+        "path": "api/screens/create",
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api.storage.delete": {
+        "file": "app/routes/api.storage.delete.ts",
+        "id": "routes/api.storage.delete",
+        "path": "api/storage/delete",
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api.supabase.query": {
+        "file": "app/routes/api.supabase.query.ts",
+        "id": "routes/api.supabase.query",
+        "path": "query",
+        "parentId": "routes/api.supabase",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api.test-increment": {
+        "file": "app/routes/api.test-increment.ts",
+        "id": "routes/api.test-increment",
+        "path": "api/test-increment",
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api.webhooks.clerk": {
+        "file": "app/routes/api.webhooks.clerk.ts",
+        "id": "routes/api.webhooks.clerk",
+        "path": "api/webhooks/clerk",
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api.billing.usage": {
+        "file": "app/routes/api.billing.usage.ts",
+        "id": "routes/api.billing.usage",
+        "path": "api/billing/usage",
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api.chat.messages": {
+        "file": "app/routes/api.chat.messages.ts",
+        "id": "routes/api.chat.messages",
+        "path": "messages",
+        "parentId": "routes/api.chat",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api.check-env-key": {
+        "file": "app/routes/api.check-env-key.ts",
+        "id": "routes/api.check-env-key",
+        "path": "api/check-env-key",
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api.screens.count": {
+        "file": "app/routes/api.screens.count.ts",
+        "id": "routes/api.screens.count",
+        "path": "api/screens/count",
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api.supabase-user": {
+        "file": "app/routes/api.supabase-user.ts",
+        "id": "routes/api.supabase-user",
+        "path": "api/supabase-user",
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api.chat.history": {
+        "file": "app/routes/api.chat.history.ts",
+        "id": "routes/api.chat.history",
+        "path": "history",
+        "parentId": "routes/api.chat",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api.chat.session": {
+        "file": "app/routes/api.chat.session.ts",
+        "id": "routes/api.chat.session",
+        "path": "session",
+        "parentId": "routes/api.chat",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api.github-stats": {
+        "file": "app/routes/api.github-stats.ts",
+        "id": "routes/api.github-stats",
+        "path": "api/github-stats",
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api.storage.list": {
+        "file": "app/routes/api.storage.list.ts",
+        "id": "routes/api.storage.list",
+        "path": "api/storage/list",
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api.test-billing": {
+        "file": "app/routes/api.test-billing.ts",
+        "id": "routes/api.test-billing",
+        "path": "api/test-billing",
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api.canvas.load": {
+        "file": "app/routes/api.canvas.load.ts",
+        "id": "routes/api.canvas.load",
+        "path": "api/canvas/load",
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api.canvas.save": {
+        "file": "app/routes/api.canvas.save.ts",
+        "id": "routes/api.canvas.save",
+        "path": "api/canvas/save",
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api.chat.search": {
+        "file": "app/routes/api.chat.search.ts",
+        "id": "routes/api.chat.search",
+        "path": "search",
+        "parentId": "routes/api.chat",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api.git-proxy.$": {
+        "file": "app/routes/api.git-proxy.$.ts",
+        "id": "routes/api.git-proxy.$",
+        "path": "api/git-proxy/*",
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api.github-user": {
+        "file": "app/routes/api.github-user.ts",
+        "id": "routes/api.github-user",
+        "path": "api/github-user",
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api.track-usage": {
+        "file": "app/routes/api.track-usage.ts",
+        "id": "routes/api.track-usage",
+        "path": "api/track-usage",
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/debug.user-sync": {
+        "file": "app/routes/debug.user-sync.tsx",
+        "id": "routes/debug.user-sync",
+        "path": "debug/user-sync",
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api.bug-report": {
+        "file": "app/routes/api.bug-report.ts",
+        "id": "routes/api.bug-report",
+        "path": "api/bug-report",
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/debug.supabase": {
+        "file": "app/routes/debug.supabase.tsx",
+        "id": "routes/debug.supabase",
+        "path": "debug/supabase",
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/setup.database": {
+        "file": "app/routes/setup.database.tsx",
+        "id": "routes/setup.database",
+        "path": "setup/database",
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/admin.migrate": {
+        "file": "app/routes/admin.migrate.tsx",
+        "id": "routes/admin.migrate",
+        "path": "admin/migrate",
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api.auth.csrf": {
+        "file": "app/routes/api.auth.csrf.ts",
+        "id": "routes/api.auth.csrf",
+        "path": "api/auth/csrf",
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api.mcp-check": {
+        "file": "app/routes/api.mcp-check.ts",
+        "id": "routes/api.mcp-check",
+        "path": "api/mcp-check",
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api.enhancer": {
+        "file": "app/routes/api.enhancer.ts",
+        "id": "routes/api.enhancer",
+        "path": "api/enhancer",
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api.git-info": {
+        "file": "app/routes/api.git-info.ts",
+        "id": "routes/api.git-info",
+        "path": "api/git-info",
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api.supabase": {
+        "file": "app/routes/api.supabase.ts",
+        "id": "routes/api.supabase",
+        "path": "api/supabase",
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api.llmcall": {
+        "file": "app/routes/api.llmcall.ts",
+        "id": "routes/api.llmcall",
+        "path": "api/llmcall",
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api.health": {
+        "file": "app/routes/api.health.ts",
+        "id": "routes/api.health",
+        "path": "api/health",
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api.models": {
+        "file": "app/routes/api.models.ts",
+        "id": "routes/api.models",
+        "path": "api/models",
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api.update": {
+        "file": "app/routes/api.update.ts",
+        "id": "routes/api.update",
+        "path": "api/update",
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api.usage": {
+        "file": "app/routes/api.usage.ts",
+        "id": "routes/api.usage",
+        "path": "api/usage",
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/dashboard": {
+        "file": "app/routes/dashboard.tsx",
+        "id": "routes/dashboard",
+        "path": "dashboard",
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/sign-in.$": {
+        "file": "app/routes/sign-in.$.tsx",
+        "id": "routes/sign-in.$",
+        "path": "*",
+        "parentId": "routes/sign-in",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/sign-up.$": {
+        "file": "app/routes/sign-up.$.tsx",
+        "id": "routes/sign-up.$",
+        "path": "*",
+        "parentId": "routes/sign-up",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/test-auth": {
+        "file": "app/routes/test-auth.tsx",
+        "id": "routes/test-auth",
+        "path": "test-auth",
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api.chat": {
+        "file": "app/routes/api.chat.ts",
+        "id": "routes/api.chat",
+        "path": "api/chat",
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/chat.$id": {
+        "file": "app/routes/chat.$id.tsx",
+        "id": "routes/chat.$id",
+        "path": "chat/:id",
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/settings": {
+        "file": "app/routes/settings.tsx",
+        "id": "routes/settings",
+        "path": "settings",
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/sign-in": {
+        "file": "app/routes/sign-in.tsx",
+        "id": "routes/sign-in",
+        "path": "sign-in",
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/sign-up": {
+        "file": "app/routes/sign-up.tsx",
+        "id": "routes/sign-up",
+        "path": "sign-up",
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/_index": {
+        "file": "app/routes/_index.tsx",
+        "id": "routes/_index",
+        "index": true,
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/git": {
+        "file": "app/routes/git.tsx",
+        "id": "routes/git",
+        "path": "git",
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      }
+    }
+  },
+  "remixConfig": {
+    "appDirectory": "D:\\internship (Vive coding platform)\\Elaric Ai\\app",
+    "basename": "/",
+    "buildDirectory": "D:\\internship (Vive coding platform)\\Elaric Ai\\build",
+    "future": {
+      "v3_fetcherPersist": true,
+      "v3_relativeSplatPath": true,
+      "v3_throwAbortReason": true,
+      "v3_routeConfig": false,
+      "v3_singleFetch": false,
+      "v3_lazyRouteDiscovery": true,
+      "unstable_optimizeDeps": false
+    },
+    "manifest": false,
+    "publicPath": "/",
+    "routes": {
+      "root": {
+        "path": "",
+        "id": "root",
+        "file": "root.tsx"
+      },
+      "routes/api.billing.sync-subscription": {
+        "file": "routes/api.billing.sync-subscription.ts",
+        "id": "routes/api.billing.sync-subscription",
+        "path": "api/billing/sync-subscription",
+        "parentId": "root"
+      },
+      "routes/api.billing.create-checkout": {
+        "file": "routes/api.billing.create-checkout.ts",
+        "id": "routes/api.billing.create-checkout",
+        "path": "api/billing/create-checkout",
+        "parentId": "root"
+      },
+      "routes/api.configured-providers": {
+        "file": "routes/api.configured-providers.ts",
+        "id": "routes/api.configured-providers",
+        "path": "api/configured-providers",
+        "parentId": "root"
+      },
+      "routes/api.canvas.snapshot.$id": {
+        "file": "routes/api.canvas.snapshot.$id.ts",
+        "id": "routes/api.canvas.snapshot.$id",
+        "path": ":id",
+        "parentId": "routes/api.canvas.snapshot"
+      },
+      "routes/api.supabase.variables": {
+        "file": "routes/api.supabase.variables.ts",
+        "id": "routes/api.supabase.variables",
+        "path": "variables",
+        "parentId": "routes/api.supabase"
+      },
+      "routes/api.system.diagnostics": {
+        "file": "routes/api.system.diagnostics.ts",
+        "id": "routes/api.system.diagnostics",
+        "path": "api/system/diagnostics",
+        "parentId": "root"
+      },
+      "routes/api.mcp-update-config": {
+        "file": "routes/api.mcp-update-config.ts",
+        "id": "routes/api.mcp-update-config",
+        "path": "api/mcp-update-config",
+        "parentId": "root"
+      },
+      "routes/api.projects.$id.load": {
+        "file": "routes/api.projects.$id.load.ts",
+        "id": "routes/api.projects.$id.load",
+        "path": "api/projects/:id/load",
+        "parentId": "root"
+      },
+      "routes/api.canvas.snapshots": {
+        "file": "routes/api.canvas.snapshots.ts",
+        "id": "routes/api.canvas.snapshots",
+        "path": "api/canvas/snapshots",
+        "parentId": "root"
+      },
+      "routes/api.chat.usage-stats": {
+        "file": "routes/api.chat.usage-stats.ts",
+        "id": "routes/api.chat.usage-stats",
+        "path": "usage-stats",
+        "parentId": "routes/api.chat"
+      },
+      "routes/api.cleanup-projects": {
+        "file": "routes/api.cleanup-projects.ts",
+        "id": "routes/api.cleanup-projects",
+        "path": "api/cleanup-projects",
+        "parentId": "root"
+      },
+      "routes/api.models.$provider": {
+        "file": "routes/api.models.$provider.ts",
+        "id": "routes/api.models.$provider",
+        "path": ":provider",
+        "parentId": "routes/api.models"
+      },
+      "routes/api.system.disk-info": {
+        "file": "routes/api.system.disk-info.ts",
+        "id": "routes/api.system.disk-info",
+        "path": "api/system/disk-info",
+        "parentId": "root"
+      },
+      "routes/api.canvas.snapshot": {
+        "file": "routes/api.canvas.snapshot.ts",
+        "id": "routes/api.canvas.snapshot",
+        "path": "api/canvas/snapshot",
+        "parentId": "root"
+      },
+      "routes/api.export-api-keys": {
+        "file": "routes/api.export-api-keys.ts",
+        "id": "routes/api.export-api-keys",
+        "path": "api/export-api-keys",
+        "parentId": "root"
+      },
+      "routes/api.export-to-figma": {
+        "file": "routes/api.export-to-figma.ts",
+        "id": "routes/api.export-to-figma",
+        "path": "api/export-to-figma",
+        "parentId": "root"
+      },
+      "routes/api.generate-mockup": {
+        "file": "routes/api.generate-mockup.ts",
+        "id": "routes/api.generate-mockup",
+        "path": "api/generate-mockup",
+        "parentId": "root"
+      },
+      "routes/api.github-branches": {
+        "file": "routes/api.github-branches.ts",
+        "id": "routes/api.github-branches",
+        "path": "api/github-branches",
+        "parentId": "root"
+      },
+      "routes/api.github-template": {
+        "file": "routes/api.github-template.ts",
+        "id": "routes/api.github-template",
+        "path": "api/github-template",
+        "parentId": "root"
+      },
+      "routes/api.gitlab-branches": {
+        "file": "routes/api.gitlab-branches.ts",
+        "id": "routes/api.gitlab-branches",
+        "path": "api/gitlab-branches",
+        "parentId": "root"
+      },
+      "routes/api.gitlab-projects": {
+        "file": "routes/api.gitlab-projects.ts",
+        "id": "routes/api.gitlab-projects",
+        "path": "api/gitlab-projects",
+        "parentId": "root"
+      },
+      "routes/api.projects.create": {
+        "file": "routes/api.projects.create.ts",
+        "id": "routes/api.projects.create",
+        "path": "api/projects/create",
+        "parentId": "root"
+      },
+      "routes/api.storage.cleanup": {
+        "file": "routes/api.storage.cleanup.ts",
+        "id": "routes/api.storage.cleanup",
+        "path": "api/storage/cleanup",
+        "parentId": "root"
+      },
+      "routes/api.system.git-info": {
+        "file": "routes/api.system.git-info.ts",
+        "id": "routes/api.system.git-info",
+        "path": "api/system/git-info",
+        "parentId": "root"
+      },
+      "routes/api.webhooks.stripe": {
+        "file": "routes/api.webhooks.stripe.ts",
+        "id": "routes/api.webhooks.stripe",
+        "path": "api/webhooks/stripe",
+        "parentId": "root"
+      },
+      "routes/api.auth.sync-user": {
+        "file": "routes/api.auth.sync-user.ts",
+        "id": "routes/api.auth.sync-user",
+        "path": "api/auth/sync-user",
+        "parentId": "root"
+      },
+      "routes/api.billing.manage": {
+        "file": "routes/api.billing.manage.ts",
+        "id": "routes/api.billing.manage",
+        "path": "api/billing/manage",
+        "parentId": "root"
+      },
+      "routes/api.billing.portal": {
+        "file": "routes/api.billing.portal.ts",
+        "id": "routes/api.billing.portal",
+        "path": "api/billing/portal",
+        "parentId": "root"
+      },
+      "routes/api.screens.create": {
+        "file": "routes/api.screens.create.ts",
+        "id": "routes/api.screens.create",
+        "path": "api/screens/create",
+        "parentId": "root"
+      },
+      "routes/api.storage.delete": {
+        "file": "routes/api.storage.delete.ts",
+        "id": "routes/api.storage.delete",
+        "path": "api/storage/delete",
+        "parentId": "root"
+      },
+      "routes/api.supabase.query": {
+        "file": "routes/api.supabase.query.ts",
+        "id": "routes/api.supabase.query",
+        "path": "query",
+        "parentId": "routes/api.supabase"
+      },
+      "routes/api.test-increment": {
+        "file": "routes/api.test-increment.ts",
+        "id": "routes/api.test-increment",
+        "path": "api/test-increment",
+        "parentId": "root"
+      },
+      "routes/api.webhooks.clerk": {
+        "file": "routes/api.webhooks.clerk.ts",
+        "id": "routes/api.webhooks.clerk",
+        "path": "api/webhooks/clerk",
+        "parentId": "root"
+      },
+      "routes/api.billing.usage": {
+        "file": "routes/api.billing.usage.ts",
+        "id": "routes/api.billing.usage",
+        "path": "api/billing/usage",
+        "parentId": "root"
+      },
+      "routes/api.chat.messages": {
+        "file": "routes/api.chat.messages.ts",
+        "id": "routes/api.chat.messages",
+        "path": "messages",
+        "parentId": "routes/api.chat"
+      },
+      "routes/api.check-env-key": {
+        "file": "routes/api.check-env-key.ts",
+        "id": "routes/api.check-env-key",
+        "path": "api/check-env-key",
+        "parentId": "root"
+      },
+      "routes/api.screens.count": {
+        "file": "routes/api.screens.count.ts",
+        "id": "routes/api.screens.count",
+        "path": "api/screens/count",
+        "parentId": "root"
+      },
+      "routes/api.supabase-user": {
+        "file": "routes/api.supabase-user.ts",
+        "id": "routes/api.supabase-user",
+        "path": "api/supabase-user",
+        "parentId": "root"
+      },
+      "routes/api.chat.history": {
+        "file": "routes/api.chat.history.ts",
+        "id": "routes/api.chat.history",
+        "path": "history",
+        "parentId": "routes/api.chat"
+      },
+      "routes/api.chat.session": {
+        "file": "routes/api.chat.session.ts",
+        "id": "routes/api.chat.session",
+        "path": "session",
+        "parentId": "routes/api.chat"
+      },
+      "routes/api.github-stats": {
+        "file": "routes/api.github-stats.ts",
+        "id": "routes/api.github-stats",
+        "path": "api/github-stats",
+        "parentId": "root"
+      },
+      "routes/api.storage.list": {
+        "file": "routes/api.storage.list.ts",
+        "id": "routes/api.storage.list",
+        "path": "api/storage/list",
+        "parentId": "root"
+      },
+      "routes/api.test-billing": {
+        "file": "routes/api.test-billing.ts",
+        "id": "routes/api.test-billing",
+        "path": "api/test-billing",
+        "parentId": "root"
+      },
+      "routes/api.canvas.load": {
+        "file": "routes/api.canvas.load.ts",
+        "id": "routes/api.canvas.load",
+        "path": "api/canvas/load",
+        "parentId": "root"
+      },
+      "routes/api.canvas.save": {
+        "file": "routes/api.canvas.save.ts",
+        "id": "routes/api.canvas.save",
+        "path": "api/canvas/save",
+        "parentId": "root"
+      },
+      "routes/api.chat.search": {
+        "file": "routes/api.chat.search.ts",
+        "id": "routes/api.chat.search",
+        "path": "search",
+        "parentId": "routes/api.chat"
+      },
+      "routes/api.git-proxy.$": {
+        "file": "routes/api.git-proxy.$.ts",
+        "id": "routes/api.git-proxy.$",
+        "path": "api/git-proxy/*",
+        "parentId": "root"
+      },
+      "routes/api.github-user": {
+        "file": "routes/api.github-user.ts",
+        "id": "routes/api.github-user",
+        "path": "api/github-user",
+        "parentId": "root"
+      },
+      "routes/api.track-usage": {
+        "file": "routes/api.track-usage.ts",
+        "id": "routes/api.track-usage",
+        "path": "api/track-usage",
+        "parentId": "root"
+      },
+      "routes/debug.user-sync": {
+        "file": "routes/debug.user-sync.tsx",
+        "id": "routes/debug.user-sync",
+        "path": "debug/user-sync",
+        "parentId": "root"
+      },
+      "routes/api.bug-report": {
+        "file": "routes/api.bug-report.ts",
+        "id": "routes/api.bug-report",
+        "path": "api/bug-report",
+        "parentId": "root"
+      },
+      "routes/debug.supabase": {
+        "file": "routes/debug.supabase.tsx",
+        "id": "routes/debug.supabase",
+        "path": "debug/supabase",
+        "parentId": "root"
+      },
+      "routes/setup.database": {
+        "file": "routes/setup.database.tsx",
+        "id": "routes/setup.database",
+        "path": "setup/database",
+        "parentId": "root"
+      },
+      "routes/admin.migrate": {
+        "file": "routes/admin.migrate.tsx",
+        "id": "routes/admin.migrate",
+        "path": "admin/migrate",
+        "parentId": "root"
+      },
+      "routes/api.auth.csrf": {
+        "file": "routes/api.auth.csrf.ts",
+        "id": "routes/api.auth.csrf",
+        "path": "api/auth/csrf",
+        "parentId": "root"
+      },
+      "routes/api.mcp-check": {
+        "file": "routes/api.mcp-check.ts",
+        "id": "routes/api.mcp-check",
+        "path": "api/mcp-check",
+        "parentId": "root"
+      },
+      "routes/api.enhancer": {
+        "file": "routes/api.enhancer.ts",
+        "id": "routes/api.enhancer",
+        "path": "api/enhancer",
+        "parentId": "root"
+      },
+      "routes/api.git-info": {
+        "file": "routes/api.git-info.ts",
+        "id": "routes/api.git-info",
+        "path": "api/git-info",
+        "parentId": "root"
+      },
+      "routes/api.supabase": {
+        "file": "routes/api.supabase.ts",
+        "id": "routes/api.supabase",
+        "path": "api/supabase",
+        "parentId": "root"
+      },
+      "routes/api.llmcall": {
+        "file": "routes/api.llmcall.ts",
+        "id": "routes/api.llmcall",
+        "path": "api/llmcall",
+        "parentId": "root"
+      },
+      "routes/api.health": {
+        "file": "routes/api.health.ts",
+        "id": "routes/api.health",
+        "path": "api/health",
+        "parentId": "root"
+      },
+      "routes/api.models": {
+        "file": "routes/api.models.ts",
+        "id": "routes/api.models",
+        "path": "api/models",
+        "parentId": "root"
+      },
+      "routes/api.update": {
+        "file": "routes/api.update.ts",
+        "id": "routes/api.update",
+        "path": "api/update",
+        "parentId": "root"
+      },
+      "routes/api.usage": {
+        "file": "routes/api.usage.ts",
+        "id": "routes/api.usage",
+        "path": "api/usage",
+        "parentId": "root"
+      },
+      "routes/dashboard": {
+        "file": "routes/dashboard.tsx",
+        "id": "routes/dashboard",
+        "path": "dashboard",
+        "parentId": "root"
+      },
+      "routes/sign-in.$": {
+        "file": "routes/sign-in.$.tsx",
+        "id": "routes/sign-in.$",
+        "path": "*",
+        "parentId": "routes/sign-in"
+      },
+      "routes/sign-up.$": {
+        "file": "routes/sign-up.$.tsx",
+        "id": "routes/sign-up.$",
+        "path": "*",
+        "parentId": "routes/sign-up"
+      },
+      "routes/test-auth": {
+        "file": "routes/test-auth.tsx",
+        "id": "routes/test-auth",
+        "path": "test-auth",
+        "parentId": "root"
+      },
+      "routes/api.chat": {
+        "file": "routes/api.chat.ts",
+        "id": "routes/api.chat",
+        "path": "api/chat",
+        "parentId": "root"
+      },
+      "routes/chat.$id": {
+        "file": "routes/chat.$id.tsx",
+        "id": "routes/chat.$id",
+        "path": "chat/:id",
+        "parentId": "root"
+      },
+      "routes/settings": {
+        "file": "routes/settings.tsx",
+        "id": "routes/settings",
+        "path": "settings",
+        "parentId": "root"
+      },
+      "routes/sign-in": {
+        "file": "routes/sign-in.tsx",
+        "id": "routes/sign-in",
+        "path": "sign-in",
+        "parentId": "root"
+      },
+      "routes/sign-up": {
+        "file": "routes/sign-up.tsx",
+        "id": "routes/sign-up",
+        "path": "sign-up",
+        "parentId": "root"
+      },
+      "routes/_index": {
+        "file": "routes/_index.tsx",
+        "id": "routes/_index",
+        "index": true,
+        "parentId": "root"
+      },
+      "routes/git": {
+        "file": "routes/git.tsx",
+        "id": "routes/git",
+        "path": "git",
+        "parentId": "root"
+      }
+    },
+    "serverBuildFile": "index.js",
+    "serverModuleFormat": "esm",
+    "ssr": true
+  },
+  "viteConfig": {
+    "build": {
+      "assetsDir": "assets"
+    }
+  }
+}
