@@ -1,7 +1,7 @@
 {
   "tasks": {
-    "install": "npm install --omit=optional",
-    "build": "npm run build",
+    "prebuild": "cp package.deploy.json package.json",
+    "build": "npm install --legacy-peer-deps && npm run build",
     "start": "npm run start"
   },
   "nodeModulesDir": "auto",
